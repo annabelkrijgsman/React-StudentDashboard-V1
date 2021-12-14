@@ -13,7 +13,7 @@ const StudentProfiles = ({name}) => {
         <>
             {name ? 
                 <div className="student-area">
-                <h4>Student profile</h4>
+                    <h4>Student profile</h4>
                     <div className="student-card">
                         <div className="avatar">
                             <img src={randomStudent.avatar} alt="avatar"/>
