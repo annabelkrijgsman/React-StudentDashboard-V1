@@ -1,7 +1,15 @@
-function App() {
+import {BrowserRouter} from 'react-router-dom'
+import Header from './Components/Header/Header'
+import Main from './Components/Main/Main'
+import './styles/style.css'
+
+const App = () => {
   return (
     <div className="App">
-      <h1>Empty React App</h1>
+      <BrowserRouter>
+        <Header />
+        <Main />
+      </BrowserRouter>
     </div>
   )
 }

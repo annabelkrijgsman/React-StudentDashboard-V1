@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Poppins:wght@300&family=Roboto:wght@300;400&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f6f3;
+  font-family: "Poppins", sans-serif;
+  color: #271b16;
+}
+
+body header {
+  text-align: center;
+  padding: 10px;
+  background-color: #c4cbb9;
+}
+
+body header h1 {
+  font-family: "Amatic SC", cursive;
+  font-size: 4em;
+}
+
+body nav {
+  padding: 15px;
+}
+
+body nav .students-nav {
+  margin: 15px;
+  overflow: hidden;
+}
+
+body nav .students-nav h4 {
+  margin-left: 15px;
+}
+
+body nav .students-nav .students {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-left: 15px;
+}
+
+body nav .students-nav .students a {
+  margin: 15px 10px 0 0;
+  text-decoration: none;
+  color: #271b16;
+  letter-spacing: 0;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.6s;
+          transition-duration: 0.6s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+body nav .students-nav .students a:after {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  -webkit-transition: all 280ms ease-in-out;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+body nav .students-nav .students a:hover:after {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-color: #d16a33;
+  -webkit-transition: width 350ms ease-in-out;
+  transition: width 350ms ease-in-out;
+  width: 100%;
+}
+
+body nav form {
+  margin: 15px 15px 15px 30px;
+}
+
+body nav form h4 {
+  margin: 0 0 10px 0;
+}
+
+body nav form label {
+  display: block;
+  width: 100px;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body nav form label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+body nav form label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+body nav form label input.check-difficulty:checked ~ .checkmark {
+  background-color: #d16a33;
+}
+
+body nav form label input.check-enjoyment:checked ~ .checkmark {
+  background-color: #a3c85a;
+}
+
+body nav form label span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #ccc;
+}
+
+body nav form label span:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+body nav form label span:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+body section .chart p {
+  margin: 0 0 20px 45px;
+}
+
+body section .chart p span {
+  font-weight: bold;
+}
+/*# sourceMappingURL=style.css.map */

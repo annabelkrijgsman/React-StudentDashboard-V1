@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Poppins:wght@300&family=Roboto:wght@300;400&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f6f3;
+  font-family: "Poppins", sans-serif;
+  color: #271b16;
+
+  header {
+    text-align: center;
+    padding: 10px;
+    background-color: #c4cbb9;
+
+    h1 {
+      font-family: "Amatic SC", cursive;
+      font-size: 4em;
+    }
+  }
+
+  nav {
+    padding: 15px;
+
+    .students-nav {
+      margin: 15px;
+      overflow: hidden;
+
+      h4 {
+        margin-left: 15px;
+      }
+
+      .students {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 15px;
+
+        a {
+          margin: 15px 10px 0 0;
+          text-decoration: none;
+          color: #271b16;
+          letter-spacing: 0;
+          transition-property: all;
+          transition-duration: 0.6s;
+          transition-timing-function: ease;
+
+          &:after {
+            backface-visibility: hidden;
+            border: 1px solid rgba(#fff, 0);
+            bottom: 0px;
+            content: " ";
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            transition: all 280ms ease-in-out;
+            width: 0;
+          }
+
+          &:hover:after {
+            backface-visibility: hidden;
+            border-color: #d16a33;
+            transition: width 350ms ease-in-out;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    form {
+      margin: 15px 15px 15px 30px;
+
+      h4 {
+        margin: 0 0 10px 0;
+      }
+
+      label {
+        display: block;
+        width: 100px;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+
+          &:checked ~ .checkmark:after {
+            display: block;
+          }
+
+          &.check-difficulty:checked ~ .checkmark {
+            background-color: #d16a33;
+          }
+
+          &.check-enjoyment:checked ~ .checkmark {
+            background-color: #a3c85a;
+          }
+        }
+
+        span {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 25px;
+          width: 25px;
+          background-color: #ccc;
+
+          &:after {
+            content: "";
+            position: absolute;
+            display: none;
+          }
+
+          &:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    .chart {
+      p {
+        margin: 0 0 20px 45px;
+
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
