@@ -25,7 +25,7 @@ function Students({ data, isLoading, onStudentSelect, onAllSelect }) {
 
   return (
     <div className="students-nav" role="list">
-      <h4>Click on a student below to see their individual ratings</h4>
+      <h4>Click on a student below to see their individual ratings and student profile</h4>
       <div className="students">
         <Link
             className="students-link"

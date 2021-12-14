@@ -3,6 +3,7 @@ import Papa from 'papaparse'
 import file from '../../Data/studentMockData.csv'
 import Chart from '../Chart/Chart'
 import Students from '../Students/Students'
+import StudentProfiles from '../Students/StudentProfiles'
 
 const Main = () => {
     const [data, setData] = useState([])
@@ -46,13 +47,20 @@ const Main = () => {
     return (
         <main>
             <nav>
-                <Students 
-                    data={data}
-                    isLoading={isLoading}
-                    name={name}
-                    onStudentSelect={onStudentSelect}
-                    onAllSelect={onAllSelect}
-                />
+                <section className="student-names">
+                    <Students 
+                        data={data}
+                        isLoading={isLoading}
+                        name={name}
+                        onStudentSelect={onStudentSelect}
+                        onAllSelect={onAllSelect}
+                    />
+                </section>
+                <section className="student-profiles">
+                    <StudentProfiles 
+                        name={name}
+                    />
+                </section>
                 <form>
                     <h4>Choose an option below</h4>
                     <label htmlFor="difficulty" className='checkbox-container'>
@@ -96,7 +104,7 @@ const Main = () => {
                     </label>
                 </form>
             </nav>
-            <section>
+            <section className="chart">
                 <Chart
                     data={data}
                     isLoading={isLoading}

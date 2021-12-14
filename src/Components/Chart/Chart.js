@@ -61,10 +61,11 @@ function Chart({ data, isLoading, name, difficultyChecked, enjoyChecked, lineCha
               data={name ? individualRatings : averageRatings}
               margin={{
                 top: 5,
-                right: 0,
+                right: 50,
                 left: 0,
                 bottom: 5,
               }}
+              
             >
               <CartesianGrid 
                 strokeDasharray="3 3" 

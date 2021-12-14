@@ -25,18 +25,27 @@ body header h1 {
 
 body nav {
   padding: 15px;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "sn sp" "f sp";
 }
 
-body nav .students-nav {
+body nav .student-names {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: sn;
+}
+
+body nav .student-names .students-nav {
   margin: 15px;
   overflow: hidden;
 }
 
-body nav .students-nav h4 {
+body nav .student-names .students-nav h4 {
   margin-left: 15px;
 }
 
-body nav .students-nav .students {
+body nav .student-names .students-nav .students {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,7 +55,7 @@ body nav .students-nav .students {
   margin-left: 15px;
 }
 
-body nav .students-nav .students a {
+body nav .student-names .students-nav .students a {
   margin: 15px 10px 0 0;
   text-decoration: none;
   color: #271b16;
@@ -59,7 +68,7 @@ body nav .students-nav .students a {
           transition-timing-function: ease;
 }
 
-body nav .students-nav .students a:after {
+body nav .student-names .students-nav .students a:after {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   border: 1px solid rgba(255, 255, 255, 0);
@@ -73,7 +82,7 @@ body nav .students-nav .students a:after {
   width: 0;
 }
 
-body nav .students-nav .students a:hover:after {
+body nav .student-names .students-nav .students a:hover:after {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   border-color: #d16a33;
@@ -82,8 +91,84 @@ body nav .students-nav .students a:hover:after {
   width: 100%;
 }
 
+body nav section.student-profiles {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: sp;
+}
+
+body nav section.student-profiles .student-area {
+  margin: 15px;
+}
+
+body nav section.student-profiles .student-area .student-card {
+  margin: 25px 0 0 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 150px 350px;
+      grid-template-columns: 150px 350px;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+      grid-template-areas: "a h" "a b";
+}
+
+body nav section.student-profiles .student-area .student-card .avatar {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: a;
+  background-color: white;
+  border: 1px solid #271b16;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  position: relative;
+}
+
+body nav section.student-profiles .student-area .student-card .avatar img {
+  position: absolute;
+  left: 15%;
+  bottom: 0;
+}
+
+body nav section.student-profiles .student-area .student-card .card-header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: h;
+  background-color: white;
+  border-top: 1px solid #271b16;
+  border-right: 1px solid #271b16;
+  border-bottom: 1px solid #271b16;
+  border-top-right-radius: 5px;
+  padding: 10px;
+}
+
+body nav section.student-profiles .student-area .student-card .card-body {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: b;
+  padding: 10px;
+  background-color: white;
+  border-bottom: 1px solid #271b16;
+  border-right: 1px solid #271b16;
+  border-bottom-right-radius: 5px;
+}
+
+body nav section.student-profiles .student-area .student-card .card-body label {
+  display: inline-block;
+  width: 55px;
+  font-style: italic;
+}
+
+body nav section.student-profiles .student-area .student-card .card-body span {
+  padding-left: 10px;
+}
+
 body nav form {
   margin: 15px 15px 15px 30px;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: f;
 }
 
 body nav form h4 {
@@ -149,11 +234,15 @@ body nav form label span:after {
   transform: rotate(45deg);
 }
 
-body section .chart p {
+section.chart .chart {
+  padding: 20px;
+}
+
+section.chart .chart p {
   margin: 0 0 20px 45px;
 }
 
-body section .chart p span {
+section.chart .chart p span {
   font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */
