@@ -1,7 +1,7 @@
 import React from 'react'
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts'
   
-function Chart({ data, isLoading, name, difficultyChecked, enjoyChecked }) {
+function Chart({ data, isLoading, name, difficultyChecked, enjoyChecked, lineChartChecked }) {
   const getIndividualRatings = () => {
     if (!isLoading) {
       const individualRating = data.filter((record) => record.name === `${name}`)
@@ -55,54 +55,107 @@ function Chart({ data, isLoading, name, difficultyChecked, enjoyChecked }) {
   return (
     <div className="chart">
       <p>In the chart you are seeing the ratings from: <span>{name ? `${name}` : "all students"}</span></p>
-      <ResponsiveContainer width="100%" aspect={4}>
-        <BarChart
-          data={name ? individualRatings : averageRatings}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 0,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid 
-            strokeDasharray="3 3" 
-            horizontal={true}
-            vertical={false}
-          />
-          <XAxis 
-            dataKey="assignment"
-            type="category"
-            tick={{ fontSize: 15 }}
-            tickFormatter={renderCustomTick}
-          />
-          <YAxis 
-            type="number"
-            allowDecimals={false}
-            tickCount={10}
-            domain={[0, 5]}
-            interval={0}
-            tickLine={false}
-          />
-          <Tooltip />
-          <Legend 
-            verticalAlign="top"
-          />
-          {difficultyChecked ? (
-            <Bar 
-              name="Difficulty"
-              dataKey="difficultyRating" 
-              fill='#D16A33'
+        <ResponsiveContainer width="100%" aspect={4}>
+          {!lineChartChecked ? 
+            <BarChart
+              data={name ? individualRatings : averageRatings}
+              margin={{
+                top: 5,
+                right: 0,
+                left: 0,
+                bottom: 5,
+              }}
+            >
+              <CartesianGrid 
+                strokeDasharray="3 3" 
+                horizontal={true}
+                vertical={false}
+              />
+              <XAxis 
+                dataKey="assignment"
+                type="category"
+                tick={{ fontSize: 15 }}
+                tickFormatter={renderCustomTick}
+              />
+              <YAxis 
+                type="number"
+                allowDecimals={false}
+                tickCount={10}
+                domain={[0, 5]}
+                interval={0}
+                tickLine={false}
+              />
+              <Tooltip />
+              <Legend 
+                verticalAlign="top"
+              />
+              {difficultyChecked ? (
+                <Bar 
+                  name="Difficulty"
+                  dataKey="difficultyRating" 
+                  fill='#D16A33'
+                />
+              ) : null}
+              {enjoyChecked ? (
+                <Bar 
+                  name="Enjoyment"
+                  dataKey="enjoymentRating" 
+                  fill='#A3C85A'
+                />
+              ) : null}
+            </BarChart>
+        : 
+          <LineChart
+            width={500}
+            height={300}
+            data={name ? individualRatings : averageRatings}
+            margin={{
+              top: 5,
+              right: 50,
+              left: 0,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid 
+              strokeDasharray="3 3" 
             />
-          ) : null}
-          {enjoyChecked ? (
-            <Bar 
-              name="Enjoyment"
-              dataKey="enjoymentRating" 
-              fill='#A3C85A'
+            <XAxis 
+              dataKey="assignment"
+              type="category"
+              tick={{ fontSize: 15 }}
+              tickFormatter={renderCustomTick}
             />
-          ) : null}
-        </BarChart>
+            <YAxis 
+              type="number"
+              allowDecimals={false}
+              tickCount={10}
+              domain={[0, 5]}
+              interval={0}
+              tickLine={false}
+            />
+            <Tooltip />
+            <Legend 
+              verticalAlign="top"
+            />
+            {difficultyChecked ? (
+              <Line 
+                name="Difficulty"
+                type="monotone" 
+                dataKey="difficultyRating" 
+                stroke="#D16A33" 
+                activeDot={{ r: 8 }} 
+              />
+            ) : null}
+            {enjoyChecked ? (
+              <Line 
+                name="Enjoyment"
+                type="monotone" 
+                dataKey="enjoymentRating" 
+                stroke="#A3C85A" 
+              />
+            ) : null}
+          </LineChart>
+        }
       </ResponsiveContainer>
     </div>
   )

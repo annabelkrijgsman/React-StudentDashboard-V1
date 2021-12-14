@@ -10,6 +10,7 @@ const Main = () => {
     const [name, setName] = useState('')
     const [difficultyChecked, setDifficultyChecked] = useState(true)
     const [enjoyChecked, setEnjoyChecked] = useState(true)
+    const [lineChartChecked, setLineChart] = useState(false)
 
     useEffect(() => {
         Papa.parse(file, {
@@ -38,6 +39,10 @@ const Main = () => {
         setEnjoyChecked(!enjoyChecked)
     }
 
+    const toggleLineChart = () => {
+        setLineChart(!lineChartChecked)
+    }
+
     return (
         <main>
             <nav>
@@ -49,7 +54,7 @@ const Main = () => {
                     onAllSelect={onAllSelect}
                 />
                 <form>
-                    <h4>Choose an option below to only see the difficulty or enjoyment ratings</h4>
+                    <h4>Choose an option below</h4>
                     <label htmlFor="difficulty" className='checkbox-container'>
                         <input
                             type="checkbox"
@@ -76,6 +81,19 @@ const Main = () => {
                         Enjoyment
                         <span className="checkmark"></span>
                     </label>
+                    <label htmlFor="line-chart" className="checkbox-container">
+                        <input
+                            type="checkbox"
+                            className="check-linechart"
+                            id="line-chart"
+                            name="rating"
+                            value="enjoyment"
+                            checked={lineChartChecked}
+                            onChange={toggleLineChart}
+                        />
+                        Show as linechart
+                        <span className="checkmark"></span>
+                    </label>
                 </form>
             </nav>
             <section>
@@ -85,6 +103,7 @@ const Main = () => {
                     name={name}
                     difficultyChecked={difficultyChecked}
                     enjoyChecked={enjoyChecked}
+                    lineChartChecked={lineChartChecked}
                 />
             </section>
         </main>
