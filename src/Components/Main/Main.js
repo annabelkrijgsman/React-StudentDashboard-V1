@@ -12,6 +12,8 @@ const Main = () => {
     const [difficultyChecked, setDifficultyChecked] = useState(true)
     const [enjoyChecked, setEnjoyChecked] = useState(true)
     const [lineChartChecked, setLineChart] = useState(false)
+    const [sortDifficultyAscendingChecked, setSortDifficultyAscending] = useState(false)
+    const [sortEnjoymentAscendingChecked, setSortEnjoymentAscending] = useState(false)
 
     useEffect(() => {
         Papa.parse(file, {
@@ -42,6 +44,14 @@ const Main = () => {
 
     const toggleLineChart = () => {
         setLineChart(!lineChartChecked)
+    }
+
+    const toggleSortDifficultyAscending = () => {
+        setSortDifficultyAscending(!sortDifficultyAscendingChecked)
+    }
+
+    const toggleSortEnjoymentAscending = () => {
+        setSortEnjoymentAscending(!sortEnjoymentAscendingChecked)
     }
 
     return (
@@ -95,11 +105,37 @@ const Main = () => {
                             className="check-linechart"
                             id="line-chart"
                             name="rating"
-                            value="enjoyment"
+                            value="line-chart"
                             checked={lineChartChecked}
                             onChange={toggleLineChart}
                         />
                         Show as linechart
+                        <span className="checkmark"></span>
+                    </label>
+                    <label htmlFor="sort-diff-asc" className="checkbox-container">
+                        <input
+                            type="checkbox"
+                            className="check-sort-diff-asc"
+                            id="sort-diff-asc"
+                            name="rating"
+                            value="sortDiffAsc"
+                            checked={sortDifficultyAscendingChecked}
+                            onChange={toggleSortDifficultyAscending}
+                        />
+                        Sort difficulty ascending
+                        <span className="checkmark"></span>
+                    </label>
+                    <label htmlFor="sort-fun-asc" className="checkbox-container">
+                        <input
+                            type="checkbox"
+                            className="check-sort-fun-asc"
+                            id="sort-fun-asc"
+                            name="rating"
+                            value="sortFunAsc"
+                            checked={sortEnjoymentAscendingChecked}
+                            onChange={toggleSortEnjoymentAscending}
+                        />
+                        Sort enjoyment ascending
                         <span className="checkmark"></span>
                     </label>
                 </form>
@@ -112,6 +148,8 @@ const Main = () => {
                     difficultyChecked={difficultyChecked}
                     enjoyChecked={enjoyChecked}
                     lineChartChecked={lineChartChecked}
+                    sortDifficultyAscendingChecked={sortDifficultyAscendingChecked}
+                    sortEnjoymentAscendingChecked={sortEnjoymentAscendingChecked}
                 />
             </section>
         </main>
