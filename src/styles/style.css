@@ -120,8 +120,8 @@ body nav section.student-profiles .student-area .student-card .avatar {
   grid-area: a;
   background-color: white;
   border: 1px solid #271b16;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
   position: relative;
 }
 
@@ -139,7 +139,7 @@ body nav section.student-profiles .student-area .student-card .card-header {
   border-top: 1px solid #271b16;
   border-right: 1px solid #271b16;
   border-bottom: 1px solid #271b16;
-  border-top-right-radius: 5px;
+  border-top-right-radius: 3px;
   padding: 10px;
 }
 
@@ -151,7 +151,7 @@ body nav section.student-profiles .student-area .student-card .card-body {
   background-color: white;
   border-bottom: 1px solid #271b16;
   border-right: 1px solid #271b16;
-  border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 3px;
 }
 
 body nav section.student-profiles .student-area .student-card .card-body label {
@@ -234,15 +234,15 @@ body nav form label span:after {
   transform: rotate(45deg);
 }
 
-section.chart .chart {
+.chart {
   padding: 20px;
 }
 
-section.chart .chart p {
+.chart p {
   margin: 0 0 20px 45px;
 }
 
-section.chart .chart p span {
+.chart p span {
   font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */

@@ -24,20 +24,22 @@ function Students({ data, isLoading, onStudentSelect, onAllSelect }) {
   const names = getNames()
 
   return (
-    <div className="students-nav" role="list">
-      <h4>Click on a student below to see their individual ratings and student profile</h4>
-      <div className="students">
-        <Link
-            className="students-link"
-            to={`/`}
-            onClick={onAllSelect}
-            role="listitem"
-          >
-            All students
-          </Link>
-          {names}
+    <section className="student-names">
+      <div className="students-nav" role="list">
+        <h4>Click on a student below to see their individual ratings and student profile</h4>
+        <div className="students">
+          <Link
+              className="students-link"
+              to={`/`}
+              onClick={onAllSelect}
+              role="listitem"
+            >
+              All students
+            </Link>
+            {names}
+        </div>
       </div>
-    </div>
+    </section> 
   )
 }
 

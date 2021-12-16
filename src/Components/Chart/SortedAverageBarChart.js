@@ -1,12 +1,7 @@
 import React from 'react'
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts'
 
-const SortedAverageBarchart = ({ 
-    sortDifficultyAscendingChecked, 
-    sortEnjoymentAscendingChecked, 
-    sortDifficultyAscending, 
-    sortEnjoymentAscending, 
-    renderCustomTick }) => {
+const SortedAverageBarchart = ({ sortDifficultyAscendingChecked, sortEnjoymentAscendingChecked, sortDifficultyAscending, sortEnjoymentAscending, renderCustomTick }) => {
 
     return (
         <ResponsiveContainer width="100%" aspect={5}>

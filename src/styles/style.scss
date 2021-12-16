@@ -97,8 +97,8 @@ body {
             grid-area: a;
             background-color: white;
             border: 1px solid #271b16;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
             position: relative;
 
             img {
@@ -114,7 +114,7 @@ body {
             border-top: 1px solid #271b16;
             border-right: 1px solid #271b16;
             border-bottom: 1px solid #271b16;
-            border-top-right-radius: 5px;
+            border-top-right-radius: 3px;
             padding: 10px;
           }
 
@@ -124,7 +124,7 @@ body {
             background-color: white;
             border-bottom: 1px solid #271b16;
             border-right: 1px solid #271b16;
-            border-bottom-right-radius: 5px;
+            border-bottom-right-radius: 3px;
 
             label {
               display: inline-block;
@@ -210,16 +210,14 @@ body {
   }
 }
 
-section.chart {
-  .chart {
-    padding: 20px;
+.chart {
+  padding: 20px;
 
-    p {
-      margin: 0 0 20px 45px;
+  p {
+    margin: 0 0 20px 45px;
 
-      span {
-        font-weight: bold;
-      }
+    span {
+      font-weight: bold;
     }
   }
 }

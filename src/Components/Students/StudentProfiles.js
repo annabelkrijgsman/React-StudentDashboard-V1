@@ -2,15 +2,10 @@ import React from 'react'
 import studentData from '../../Data/studentProfilesData'
 
 const StudentProfiles = ({name}) => {
-    const studentState = {
-        students: studentData,
-        name: name
-    }
-
-    const randomStudent = studentState.students[Math.floor(Math.random() * studentState.students.length)]
+    const randomStudent = studentData[Math.floor(Math.random() * studentData.length)]
 
     return (
-        <>
+        <section className="student-profiles">
             {name ? 
                 <div className="student-area">
                     <h4>Student profile</h4>
@@ -32,7 +27,7 @@ const StudentProfiles = ({name}) => {
                     </div>
                 </div>
              : null}   
-        </>
+        </section>
     )
 }
 

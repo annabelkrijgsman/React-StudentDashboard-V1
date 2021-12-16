@@ -3,15 +3,7 @@ import AverageBarChart from './AverageBarChart'
 import AverageLineChart from './AverageLineChart'
 import SortedAverageBarchart from './SortedAverageBarChart'
   
-function Chart({ 
-    data, 
-    isLoading, 
-    name, 
-    difficultyChecked, 
-    enjoyChecked, 
-    lineChartChecked, 
-    sortDifficultyAscendingChecked, 
-    sortEnjoymentAscendingChecked }) {
+function Chart({ data, isLoading, name, difficultyChecked, enjoyChecked, lineChartChecked, sortDifficultyAscendingChecked, sortEnjoymentAscendingChecked }) {
 
   const getIndividualRatings = () => {
     if (!isLoading) {
@@ -92,7 +84,6 @@ function Chart({
 
   return (
     <div className="chart">
-
         {sortDifficultyAscendingChecked || sortEnjoymentAscendingChecked ? (
           <SortedAverageBarchart
             sortDifficultyAscendingChecked={sortDifficultyAscendingChecked}
